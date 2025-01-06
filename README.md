@@ -22,8 +22,8 @@ https://abdullahkhalid.com/qecft/stabilizer-codes/
 The goal here is to build some simple intuition for encoding circuits, so for a first prototype I'm going to hardcode the generators in. They can be procedural from a file. This also sets me up for webpage level generation later.
 
 
-| ![[assets/Website visual outline.png]]          |
-| -------------------------------------------------------------------------------- |
+| ![website layout](assets/Website%20visual%20outline.png)                      |
+| ----------------------------------------------------------------------------- |
 | ![[assets/StabilizerWebsite Interface Mockup]]Diagram of my potential webpage |
 I'm thinking that there are Four total main containers. Three require user interaction: `Generators`, `Instructions`, and `gatePalate`. I can copy the instructions asset and palate from [[../QuantumInfection|QuantumInfection]]. The circuit asset for now is just managed by `quantum-circuit`.
 
@@ -49,7 +49,7 @@ When a row is clicked, an event is issued out to some kind to a control componen
 
 
 #### Gate Commutation Identities
-![[assets/StabilizerCommutationIdentities.png]]
+![commutation identities](assets/StabilizerCommutationIdentities.png)
 I should firstly come up with a format to manage this, as it's the heart of the project
 
 ## Overview
