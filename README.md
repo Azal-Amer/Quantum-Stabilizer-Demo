@@ -19,8 +19,11 @@ https://abdullahkhalid.com/qecft/stabilizer-codes/
 
 
 
-The goal here is to build some simple intuition for encoding circuits, so for a first prototype I'm going to hardcode the generators in. They can be procedural from a file. This also sets me up for webpage level generation later.
-
+The goal here is to build some simple intuition for decoding circuits, so for a first prototype I'm going to hardcode the generators in. They can be procedural from a file. This also sets me up for webpage level generation later.
+ 
+>[!quote] "The gates you use are the decoding circuit. To encode, apply the inverse  
+of that circuit"
+ > - Quantum Computing FRI Slides Lesson 18
 
 | ![website layout](assets/Website%20visual%20outline.png)                      |
 | ----------------------------------------------------------------------------- |
