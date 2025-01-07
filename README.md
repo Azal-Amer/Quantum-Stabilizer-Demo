@@ -55,6 +55,63 @@ When a row is clicked, an event is issued out to some kind to a control componen
 ![commutation identities](assets/StabilizerCommutationIdentities.png)
 I should firstly come up with a format to manage this, as it's the heart of the project
 
+##### $Cx$
+
+| Left: $C_{0,1}^{X}O$ | Right:$OC_{0,1}^{X}$   |
+| -------------------- | ---------------------- |
+| $Z_{0}I_{1}$         | $Z_{0}I_{1}$           |
+| $I_{0}Z_{1}$         | $Z_{0}Z_{1}$           |
+| $X_{0}I_{1}$         | $X_{0}X_{1}$           |
+| $I_{0}X_{1}$         | $I_{0}X_{1}$           |
+| $Z_{0}X_{1}$         | $Z_{0}X_{1}$           |
+| $X_{0}Z_{1}$         | $X_{0}Z_{0}X_{1}Z_{1}$ |
+##### $Cz$
+
+| Left: $C_{0,1}^{Z}O$ | Right:$OC_{0,1}^{Z}$   |
+| -------------------- | ---------------------- |
+| $Z_{0}I_{1}$         | $Z_{0}I_{1}$           |
+| $X_{0}I_{1}$         | $X_{0}Z_{1}$           |
+| $X_{0}X_{1}$         | $Z_{0}X_{0}X_{1}Z_{1}$ |
+
+
+Ideally I can take some sample file and hardcode all the commutation identities. Then given that hardcoded file, the program can reference to update. I believe I can also ignore global phase?
+
+
+
+
+>[!question]+ Is the global phase ever important?
+>
+
+The simpler method is just to work it out myself using hardcoding?
+![[../../../Supplemental Files/images/README 2025-01-06 19.16.59.excalidraw]]
+
+For hardcoding, I'll make the following assumptions I need to check later
+1. $XZ$,$ZX$ are all global phase rotations of $Y$. As such, any instance of Y can be mapped to the combo.
+
+
+Wait is it possible to measure in the different basis instead? Like for any result, I just measure it's projection onto $X_{0\dots1},Y_{0\dots1},Z_{0\dots1}$ then take note of the length. It should tell me which one best matches and with what value?
+
+Can I just multiply by the inverted form of each matrix? Then I can just check against identity right? Because I know it has to be one of those forms. Then the phase should just drift through.
+
+I can probably just prototype this, to make a function which finds our corresponding match?
+- That being looping through like every possible outcome? It's inefficient but it saves some time. 
+
+I want a function to loop through the options, and then print out which one worked
+
+To construct that function, what we know is that for a given gate $O$ and stabilizer generators $P$ we have to solve the commutation :
+$$
+\begin{align}
+PO-O\Lambda = 0 \\
+O^{-1}PO=\Lambda
+\end{align}
+$$
+$\Lambda$ represents the corresponding analogous operation after the fact. 
+To decompose, I personally just looped through all the possible generators.
+It seems to work!
+
+
+
+
 ## Overview
 
 > [!todo] Todo
@@ -68,3 +125,5 @@ I should firstly come up with a format to manage this, as it's the heart of the 
 
 
 
+
+$1. \forall x \in \{{\text{Spin }\frac{1}{2}}\}$
